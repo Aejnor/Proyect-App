@@ -1,6 +1,7 @@
 package com.adolfo.controller;
 
 import com.adolfo.model.*;
+import com.sun.org.apache.xpath.internal.SourceTree;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -35,53 +36,125 @@ public class AppController {
     public ArrayList<Gun> getRifle() {
         return rifles;
     }
-
     public ArrayList<Gun> getAssaultRifle() {
         return assaultRifles;
     }
-
     public ArrayList<Gun> getSubMachineGun() {
         return subMachineGuns;
     }
-
     public ArrayList<Gun> getSniperRifle() {
         return sniperRifles;
     }
 
 
-//    Add methods
+//    Setters
 
     public void addRifle(Gun rifle) {
         this.rifles.add(rifle);
     }
-
     public void addAssaultRifle(Gun assaultRifle) {
         this.assaultRifles.add(assaultRifle);
     }
-
     public void addSubMachineGuns(Gun subMachineGun) {
         this.subMachineGuns.add(subMachineGun);
     }
-
     public void addSniperRifle(Gun sniperRifle) {
         this.sniperRifles.add(sniperRifle);
     }
 
     //    Add methods
     public void addRifle() {
+        String name;
+        String originplace;
+        int ammunitionClip;
+        double gauge;
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Write the name of the rifle you want to add: ");
+        name = input.nextLine();
+
+        System.out.println("Write the origin place of the rifle: ");
+        originplace = input.nextLine();
+
+        System.out.println("Write how many bullets have the rifle in the magazine: ");
+        ammunitionClip = input.nextInt();
+
+        System.out.println("What gauge use your rifle ? ");
+        gauge = input.nextDouble();
+
+
+        this.addRifle(new Gun(name, originplace, ammunitionClip, gauge));
 
     }
-
     public void addAssaultRifle() {
+        String name;
+        String originplace;
+        int ammunitionClip;
+        double gauge;
 
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Write the name of the assault rifle you want to add: ");
+        name = input.nextLine();
+
+        System.out.println("Write the origin place of the assault rifle: ");
+        originplace = input.nextLine();
+
+        System.out.println("Write how many bullets have the assault rifle in the magazine: ");
+        ammunitionClip = input.nextInt();
+
+        System.out.println("What gauge use your assault rifle ? ");
+        gauge = input.nextDouble();
+
+
+        this.addAssaultRifle(new Gun(name, originplace, ammunitionClip, gauge));
     }
-
     public void addSniperRifle() {
+        String name;
+        String originplace;
+        int ammunitionClip;
+        double gauge;
 
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Write the name of the sniper rifle you want to add: ");
+        name = input.nextLine();
+
+        System.out.println("Write the origin place of the sniper rifle: ");
+        originplace = input.nextLine();
+
+        System.out.println("Write how many bullets have the sniper rifle in the magazine: ");
+        ammunitionClip = input.nextInt();
+
+        System.out.println("What gauge use your sniper rifle ? ");
+        gauge = input.nextDouble();
+
+
+        this.addSniperRifle(new Gun(name, originplace, ammunitionClip, gauge));
     }
-
     public void addSubMachine() {
+        String name;
+        String originplace;
+        int ammunitionClip;
+        double gauge;
 
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Write the name of the sub-Machine gun you want to add: ");
+        name = input.nextLine();
+
+        System.out.println("Write the origin place of the sub-Machine gun: ");
+        originplace = input.nextLine();
+
+        System.out.println("Write how many bullets have the sub-Machine gun in the magazine: ");
+        ammunitionClip = input.nextInt();
+
+        System.out.println("What gauge use your sub-Machine gun ? ");
+        gauge = input.nextDouble();
+
+
+        this.addSubMachineGuns(new Gun(name, originplace, ammunitionClip, gauge));
     }
 
     //      Delete methods
@@ -97,7 +170,6 @@ public class AppController {
         rifles.remove(index - 1);
 
     }
-
     public void deleteAssaultRifle() {
         int index;
         Scanner input = new Scanner(System.in);
@@ -108,7 +180,6 @@ public class AppController {
         index = input.nextInt();
         assaultRifles.remove(index - 1);
     }
-
     public void deleteSniperRifle() {
         int index;
         Scanner input = new Scanner(System.in);
@@ -119,7 +190,6 @@ public class AppController {
         index = input.nextInt();
         sniperRifles.remove(index - 1);
     }
-
     public void deleteSubMachine() {
         int index;
         Scanner input = new Scanner(System.in);
@@ -133,32 +203,35 @@ public class AppController {
 
     //    Show methods
     public void showRifleList() {
-
-        for (int i = 0; i < rifles.size(); i++) {
-            System.out.print(i + 1 + "- ");
-            System.out.println(rifles);
+        int index = 1;
+        for ( Gun i : rifles) {
+            System.out.print(index + " - ");
+            System.out.println(i);
+            index++;
         }
     }
-
     public void showAssaultRifleList() {
-
-        for (int i = 0; i < assaultRifles.size(); i++) {
-            System.out.print(i + 1 + "- ");
-            System.out.println(assaultRifles);
+        int index = 1;
+        for ( Gun i : assaultRifles) {
+            System.out.print(index + " - ");
+            System.out.println(i);
+            index++;
         }
     }
-
     public void showSniperRifleList() {
-        for (int i = 0; i < sniperRifles.size(); i++) {
-            System.out.print(i + 1 + "- ");
-            System.out.println(sniperRifles);
+        int index = 1;
+        for ( Gun i : sniperRifles) {
+            System.out.print(index + " - ");
+            System.out.println(i);
+            index++;
         }
     }
-
     public void showSubMachineList() {
-        for (int i = 0; i < subMachineGuns.size(); i++) {
-            System.out.print(i + 1 + "- ");
-            System.out.println(subMachineGuns);
+        int index = 1;
+        for ( Gun i : subMachineGuns) {
+            System.out.print(index + " - ");
+            System.out.println(i);
+            index++;
         }
     }
 

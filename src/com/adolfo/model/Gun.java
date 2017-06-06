@@ -9,7 +9,7 @@ public class Gun {
     String originplace;
     //    String typeofgun;
     int ammunitionClip;
-    double cartridge;
+    double gauge;
 
 //  Full constructor
 
@@ -18,7 +18,7 @@ public class Gun {
         this.originplace = originplace;
 //        this.typeofgun = typeofgun;
         this.ammunitionClip = ammunitionClip;
-        this.cartridge = cartridge;
+        this.gauge = cartridge;
 
     }
 
@@ -59,11 +59,11 @@ public class Gun {
     }
 
     public double getCartridge() {
-        return cartridge;
+        return gauge;
     }
 
     public void setCartridge(double cartridge) {
-        this.cartridge = cartridge;
+        this.gauge = cartridge;
     }
 
 
@@ -71,7 +71,7 @@ public class Gun {
 
     @Override
     public String toString() {
-        return "Gun ( " + "Name: '" + name + '\'' +", origin place: '" + originplace + '\'' +
-                ", Ammunition clip: " + ammunitionClip +", cartridge: " + cartridge +" )";
+        return "Name: '" + name + '\'' +", Origin place: '" + originplace + '\'' +
+                ", Ammunition clip: " + ammunitionClip +", Gauge: " + gauge;
     }
 }

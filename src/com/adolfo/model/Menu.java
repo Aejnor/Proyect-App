@@ -91,6 +91,7 @@ public class Menu {
         System.out.println("***********************************************");
         option = input.nextInt();
         return option;
+
     }
 
 //        Add options
@@ -111,16 +112,24 @@ public class Menu {
             switch (option) {
 
                 case 1:
+                    app.addAssaultRifle();
                     break;
                 case 2:
+                    app.addRifle();
                     break;
                 case 3:
-
+                    app.addSubMachine();
+                    break;
+                case 4:
+                    app.addSniperRifle();
+                    break;
 
             }
 
         }
-
+        if (option == 0) {
+            menuInicial();
+        }
     }
 
 
