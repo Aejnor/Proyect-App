@@ -95,7 +95,7 @@ public class Menu {
     public static int selectWeapons() {
         Scanner input = new Scanner(System.in);
 
-        int option = 0;
+        int option = 1;
 
         System.out.println("***********************************************");
         System.out.println("*              1 - Assault Rifles             *");
@@ -152,9 +152,7 @@ public class Menu {
             }
 
         }
-        if (option == 0) {
-            menuInicial();
-        }
+
     }
 
 
@@ -186,10 +184,6 @@ public class Menu {
                     break;
             }
         }
-        if (option == 0) {
-            menuInicial();
-        }
-
     }
 
     //        Delete weapons options
@@ -220,9 +214,6 @@ public class Menu {
                     app.deleteSniperRifle();
                     break;
             }
-        }
-        if (option == 0) {
-            menuInicial();
         }
     }
 }

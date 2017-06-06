@@ -1,5 +1,7 @@
 package com.adolfo.model;
 
+import java.util.Comparator;
+
 /**
  * Created by Adolfo on 03/06/2017.
  */
@@ -74,4 +76,17 @@ public class Gun {
         return "Name: '" + name + '\'' +", Origin place: '" + originplace + '\'' +
                 ", Ammunition clip: " + ammunitionClip +", Gauge: " + gauge;
     }
+
+
+//  Trying to compare weapons by caliber
+
+    public static Comparator<Gun> Comparingbycaliber = new Comparator<Gun>() {
+        @Override
+        public int compare(Gun o1, Gun o2) {
+
+
+            return Double.compare(o1.getCartridge(),o2.getCartridge());
+
+        }
+    };
 }
