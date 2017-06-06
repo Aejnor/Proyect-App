@@ -2,6 +2,7 @@ package com.adolfo.model;
 
 import com.adolfo.controller.AppController;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 
@@ -30,7 +31,7 @@ public class Menu {
 
     }
 
-//     I show here the first menu, where they can choose "add", "delete" or "show"
+//     I call here the first menu, where they can choose "add", "delete" or "show"
 
 
     public static void menuInicial() {
@@ -50,11 +51,14 @@ public class Menu {
                 case 3:
                     showWeapon();
                     break;
+
+
             }
-
         }
-
     }
+
+
+//    This is the first menu we will show
 
     private static int showInitialMenu() {
 
@@ -66,8 +70,10 @@ public class Menu {
         System.out.println("*      1 - Add weapon           *");
         System.out.println("*      2 - Delete weapon        *");
         System.out.println("*      3 - Show weapons         *");
+        System.out.println("*      0 - Exit                 *");
         System.out.println("*********************************");
         System.out.println("Option: ");
+
 
         option = input.nextInt();
 
@@ -75,7 +81,7 @@ public class Menu {
 
     }
 
-//      Select type of weapons
+//      This one is the menu were the client choose the type of weapon he/she wants to "add", "delete" or "show"
 
     public static int selectWeapons() {
         Scanner input = new Scanner(System.in);
@@ -94,7 +100,7 @@ public class Menu {
 
     }
 
-//        Add options
+//        Add weapons options
     private static int menuAddWeapon() {
 
         int option;
@@ -133,7 +139,7 @@ public class Menu {
     }
 
 
-//      Weapon print options
+//      Print weapons options
     private static int menuShowWeapon() {
         int option;
         option = selectWeapons();
@@ -167,7 +173,7 @@ public class Menu {
 
     }
 
-//        Delete options
+//        Delete weapons options
     private static int menuDeleteWeapon() {
         int option;
         option = selectWeapons();

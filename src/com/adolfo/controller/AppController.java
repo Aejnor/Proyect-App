@@ -4,6 +4,7 @@ import com.adolfo.model.*;
 import com.sun.org.apache.xpath.internal.SourceTree;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -31,7 +32,6 @@ public class AppController {
     }
 
 //    Getters
-
 
     public ArrayList<Gun> getRifle() {
         return rifles;
@@ -66,23 +66,26 @@ public class AppController {
     public void addRifle() {
         String name;
         String originplace;
-        int ammunitionClip;
-        double gauge;
+        int ammunitionClip = 0;
+        double gauge = 0.0;
 
         Scanner input = new Scanner(System.in);
-
         System.out.println("Write the name of the rifle you want to add: ");
         name = input.nextLine();
 
         System.out.println("Write the origin place of the rifle: ");
         originplace = input.nextLine();
+        try {
+            System.out.println("Write how many bullets have the rifle in the magazine: ");
+            ammunitionClip = input.nextInt();
 
-        System.out.println("Write how many bullets have the rifle in the magazine: ");
-        ammunitionClip = input.nextInt();
+            System.out.println("What gauge use your rifle ? ");
+            gauge = input.nextDouble();
+        }catch(InputMismatchException e){
+            messageOfMismatch();
 
-        System.out.println("What gauge use your rifle ? ");
-        gauge = input.nextDouble();
 
+        }
 
         this.addRifle(new Gun(name, originplace, ammunitionClip, gauge));
 
@@ -90,31 +93,34 @@ public class AppController {
     public void addAssaultRifle() {
         String name;
         String originplace;
-        int ammunitionClip;
-        double gauge;
+        int ammunitionClip = 0 ;
+        double gauge = 0;
 
         Scanner input = new Scanner(System.in);
 
         System.out.println("Write the name of the assault rifle you want to add: ");
         name = input.nextLine();
 
-        System.out.println("Write the origin place of the assault rifle: ");
-        originplace = input.nextLine();
 
-        System.out.println("Write how many bullets have the assault rifle in the magazine: ");
-        ammunitionClip = input.nextInt();
+            System.out.println("Write the origin place of the assault rifle: ");
+            originplace = input.nextLine();
+        try{
+            System.out.println("Write how many bullets have the assault rifle in the magazine: ");
+            ammunitionClip = input.nextInt();
 
-        System.out.println("What gauge use your assault rifle ? ");
-        gauge = input.nextDouble();
-
+            System.out.println("What gauge use your assault rifle ? ");
+            gauge = input.nextDouble();
+        }catch(InputMismatchException e){
+            messageOfMismatch();
+    }
 
         this.addAssaultRifle(new Gun(name, originplace, ammunitionClip, gauge));
     }
     public void addSniperRifle() {
         String name;
         String originplace;
-        int ammunitionClip;
-        double gauge;
+        int ammunitionClip = 0;
+        double gauge = 0;
 
         Scanner input = new Scanner(System.in);
 
@@ -123,21 +129,23 @@ public class AppController {
 
         System.out.println("Write the origin place of the sniper rifle: ");
         originplace = input.nextLine();
-
+    try{
         System.out.println("Write how many bullets have the sniper rifle in the magazine: ");
         ammunitionClip = input.nextInt();
 
         System.out.println("What gauge use your sniper rifle ? ");
         gauge = input.nextDouble();
-
+    }catch(InputMismatchException e){
+        messageOfMismatch();
+    }
 
         this.addSniperRifle(new Gun(name, originplace, ammunitionClip, gauge));
     }
     public void addSubMachine() {
         String name;
         String originplace;
-        int ammunitionClip;
-        double gauge;
+        int ammunitionClip = 0;
+        double gauge = 0.0;
 
         Scanner input = new Scanner(System.in);
 
@@ -146,13 +154,15 @@ public class AppController {
 
         System.out.println("Write the origin place of the sub-Machine gun: ");
         originplace = input.nextLine();
-
+    try{
         System.out.println("Write how many bullets have the sub-Machine gun in the magazine: ");
         ammunitionClip = input.nextInt();
 
         System.out.println("What gauge use your sub-Machine gun ? ");
         gauge = input.nextDouble();
-
+    }catch(InputMismatchException e){
+        messageOfMismatch();
+    }
 
         this.addSubMachineGuns(new Gun(name, originplace, ammunitionClip, gauge));
     }
@@ -164,10 +174,15 @@ public class AppController {
         Scanner input = new Scanner(System.in);
 
         showRifleList();
-        System.out.println("Choose the index weapon you want to delete: ");
+        try {
+            System.out.println("Choose the index weapon you want to delete: ");
 
-        index = input.nextInt();
-        rifles.remove(index - 1);
+            index = input.nextInt();
+            rifles.remove(index - 1);
+        }catch (IndexOutOfBoundsException e){
+            messageOutOfBound();
+        }
+
 
     }
     public void deleteAssaultRifle() {
@@ -233,6 +248,26 @@ public class AppController {
             System.out.println(i);
             index++;
         }
+    }
+
+
+
+
+
+    // Methods of messages in the exceptions
+
+    private void messageOfMismatch(){
+        System.out.println( "╔════════════════════════════════════════╗");
+        System.out.println("║ You have entered an invalid value ║");
+        System.out.println( "╚════════════════════════════════════════╝");
+        System.out.println("");
+    }
+
+    private void messageOutOfBound(){
+        System.out.println( "╔═════════════════════════════════════════╗");
+        System.out.println("║ You have left the limit of the list ║");
+        System.out.println( "╚═════════════════════════════════════════╝");
+        System.out.println("");
     }
 
 }
