@@ -54,6 +54,7 @@ public class Menu {
 
             }
         }
+
     }
 
 
@@ -72,8 +73,10 @@ public class Menu {
         System.out.println("*      0 - Exit                 *");
         System.out.println("*********************************");
         System.out.println("Option: ");
+
         try {
             option = input.nextInt();
+            input.nextLine();
             if (option < 0){
                 System.out.println("Choose a valid value, please.");
             }else if (option > 3){
@@ -104,6 +107,7 @@ public class Menu {
         try {
             System.out.println("Option: ");
             option = input.nextInt();
+            input.nextLine();
             if (option < 0){
                 System.out.println("Choose a valid value, please.");
             }else if (option > 3) {
