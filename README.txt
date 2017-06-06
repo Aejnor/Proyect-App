@@ -1,7 +1,8 @@
-This app is a list with weapons of the 2 World War, where you can add, delete and show it, listed by the type of gun they are.
-______________________________________________________________________________________________________________________________
+This app is a list with weapons of the 2 World War, where you can add, delete and show it
+listed by the type of gun they are.
+__________________________________________________________________________________________________________
 
-________________________________________________ DOCUMENTATION OF THE APP_____________________________________________________
+________________________________________ DOCUMENTATION OF THE APP ________________________________________
 
 
 ---- Classes in the packcage "model" ----
@@ -47,7 +48,7 @@ ________________________________________________ DOCUMENTATION OF THE APP_______
 - Two helpers methods to use them when we want to launch some message about any type of exception that launches the program.
 
 
-________________________________________________ What i want to add in a future _____________________________________________________
+_____________________________________ What i want to add in a future __________________________________________
 
 
 - Add some methods to edit the weapon you want, if you fail in the introduction of data.
