@@ -3,6 +3,7 @@ package com.adolfo.controller;
 import com.adolfo.model.*;
 import com.sun.org.apache.xpath.internal.SourceTree;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -36,12 +37,15 @@ public class AppController {
     public ArrayList<Gun> getRifle() {
         return rifles;
     }
+
     public ArrayList<Gun> getAssaultRifle() {
         return assaultRifles;
     }
+
     public ArrayList<Gun> getSubMachineGun() {
         return subMachineGuns;
     }
+
     public ArrayList<Gun> getSniperRifle() {
         return sniperRifles;
     }
@@ -52,17 +56,20 @@ public class AppController {
     public void addRifle(Gun rifle) {
         this.rifles.add(rifle);
     }
+
     public void addAssaultRifle(Gun assaultRifle) {
         this.assaultRifles.add(assaultRifle);
     }
+
     public void addSubMachineGuns(Gun subMachineGun) {
         this.subMachineGuns.add(subMachineGun);
     }
+
     public void addSniperRifle(Gun sniperRifle) {
         this.sniperRifles.add(sniperRifle);
     }
 
-    //    Add methods
+    //    This ones are the "add methods" of all the type of the guns
     public void addRifle() {
         String name;
         String originplace;
@@ -81,7 +88,7 @@ public class AppController {
 
             System.out.println("What gauge use your rifle ? ");
             gauge = input.nextDouble();
-        }catch(InputMismatchException e){
+        } catch (InputMismatchException e) {
             messageOfMismatch();
 
 
@@ -90,10 +97,11 @@ public class AppController {
         this.addRifle(new Gun(name, originplace, ammunitionClip, gauge));
 
     }
+
     public void addAssaultRifle() {
         String name;
         String originplace;
-        int ammunitionClip = 0 ;
+        int ammunitionClip = 0;
         double gauge = 0;
 
         Scanner input = new Scanner(System.in);
@@ -102,20 +110,21 @@ public class AppController {
         name = input.nextLine();
 
 
-            System.out.println("Write the origin place of the assault rifle: ");
-            originplace = input.nextLine();
-        try{
+        System.out.println("Write the origin place of the assault rifle: ");
+        originplace = input.nextLine();
+        try {
             System.out.println("Write how many bullets have the assault rifle in the magazine: ");
             ammunitionClip = input.nextInt();
 
             System.out.println("What gauge use your assault rifle ? ");
             gauge = input.nextDouble();
-        }catch(InputMismatchException e){
+        } catch (InputMismatchException e) {
             messageOfMismatch();
-    }
+        }
 
         this.addAssaultRifle(new Gun(name, originplace, ammunitionClip, gauge));
     }
+
     public void addSniperRifle() {
         String name;
         String originplace;
@@ -129,18 +138,19 @@ public class AppController {
 
         System.out.println("Write the origin place of the sniper rifle: ");
         originplace = input.nextLine();
-    try{
-        System.out.println("Write how many bullets have the sniper rifle in the magazine: ");
-        ammunitionClip = input.nextInt();
+        try {
+            System.out.println("Write how many bullets have the sniper rifle in the magazine: ");
+            ammunitionClip = input.nextInt();
 
-        System.out.println("What gauge use your sniper rifle ? ");
-        gauge = input.nextDouble();
-    }catch(InputMismatchException e){
-        messageOfMismatch();
-    }
+            System.out.println("What gauge use your sniper rifle ? ");
+            gauge = input.nextDouble();
+        } catch (InputMismatchException e) {
+            messageOfMismatch();
+        }
 
         this.addSniperRifle(new Gun(name, originplace, ammunitionClip, gauge));
     }
+
     public void addSubMachine() {
         String name;
         String originplace;
@@ -154,20 +164,20 @@ public class AppController {
 
         System.out.println("Write the origin place of the sub-Machine gun: ");
         originplace = input.nextLine();
-    try{
-        System.out.println("Write how many bullets have the sub-Machine gun in the magazine: ");
-        ammunitionClip = input.nextInt();
+        try {
+            System.out.println("Write how many bullets have the sub-Machine gun in the magazine: ");
+            ammunitionClip = input.nextInt();
 
-        System.out.println("What gauge use your sub-Machine gun ? ");
-        gauge = input.nextDouble();
-    }catch(InputMismatchException e){
-        messageOfMismatch();
-    }
+            System.out.println("What gauge use your sub-Machine gun ? ");
+            gauge = input.nextDouble();
+        } catch (InputMismatchException e) {
+            messageOfMismatch();
+        }
 
         this.addSubMachineGuns(new Gun(name, originplace, ammunitionClip, gauge));
     }
 
-    //      Delete methods
+    //      Delete methods for all the type of weapons
     public void deleteRifle() {
 
         int index;
@@ -179,71 +189,98 @@ public class AppController {
 
             index = input.nextInt();
             rifles.remove(index - 1);
-        }catch (IndexOutOfBoundsException e){
+        } catch (IndexOutOfBoundsException e) {
             messageOutOfBound();
+            deleteRifle();
         }
-
-
     }
+
     public void deleteAssaultRifle() {
         int index;
         Scanner input = new Scanner(System.in);
 
         showAssaultRifleList();
         System.out.println("Choose the index weapon you want to delete: ");
-
-        index = input.nextInt();
-        assaultRifles.remove(index - 1);
+        try {
+            index = input.nextInt();
+            assaultRifles.remove(index - 1);
+        } catch (IndexOutOfBoundsException e) {
+            messageOutOfBound();
+            deleteAssaultRifle();
+        }
     }
+
     public void deleteSniperRifle() {
         int index;
         Scanner input = new Scanner(System.in);
 
         showSniperRifleList();
         System.out.println("Choose the index weapon you want to delete: ");
-
-        index = input.nextInt();
-        sniperRifles.remove(index - 1);
+        try {
+            index = input.nextInt();
+            sniperRifles.remove(index - 1);
+        } catch (IndexOutOfBoundsException e) {
+            messageOutOfBound();
+            deleteSniperRifle();
+        }
     }
+
     public void deleteSubMachine() {
         int index;
         Scanner input = new Scanner(System.in);
 
         showSubMachineList();
         System.out.println("Choose the index weapon you want to delete: ");
-
-        index = input.nextInt();
-        subMachineGuns.remove(index - 1);
+        try {
+            index = input.nextInt();
+            subMachineGuns.remove(index - 1);
+        } catch (IndexOutOfBoundsException e) {
+            messageOutOfBound();
+            deleteSubMachine();
+        }
     }
 
-    //    Show methods
+    //    Show methods  for the kind of weapons
     public void showRifleList() {
+        messageEmptyArray(rifles);
+
         int index = 1;
-        for ( Gun i : rifles) {
+//        We go through the list and add an index to the objects listed, exactly the same in the other methods
+        for (Gun i : rifles) {
             System.out.print(index + " - ");
             System.out.println(i);
             index++;
+
         }
     }
+
     public void showAssaultRifleList() {
+        messageEmptyArray(assaultRifles);
+
         int index = 1;
-        for ( Gun i : assaultRifles) {
+        for (Gun i : assaultRifles) {
             System.out.print(index + " - ");
             System.out.println(i);
             index++;
         }
     }
+
     public void showSniperRifleList() {
+        messageEmptyArray(sniperRifles);
+
         int index = 1;
-        for ( Gun i : sniperRifles) {
+        for (Gun i : sniperRifles) {
             System.out.print(index + " - ");
             System.out.println(i);
             index++;
         }
     }
+
     public void showSubMachineList() {
+        messageEmptyArray(subMachineGuns);
+
         int index = 1;
-        for ( Gun i : subMachineGuns) {
+        for (Gun i : subMachineGuns) {
             System.out.print(index + " - ");
             System.out.println(i);
             index++;
@@ -251,24 +288,34 @@ public class AppController {
     }
 
 
+    // Helpers methods
 
+//    We will use this methods when we want to launch a message for a MismatchException
 
-
-    // Methods of messages in the exceptions
-
-    private void messageOfMismatch(){
-        System.out.println( "╔════════════════════════════════════════╗");
+    private void messageOfMismatch() {
+        System.out.println("╔════════════════════════════════════════╗");
         System.out.println("║ You have entered an invalid value ║");
-        System.out.println( "╚════════════════════════════════════════╝");
+        System.out.println("╚════════════════════════════════════════╝");
         System.out.println("");
     }
 
-    private void messageOutOfBound(){
-        System.out.println( "╔═════════════════════════════════════════╗");
+//    This one for the OutOfBoundExceptions
+
+    private void messageOutOfBound() {
+        System.out.println("╔═════════════════════════════════════════╗");
         System.out.println("║ You have left the limit of the list ║");
-        System.out.println( "╚═════════════════════════════════════════╝");
+        System.out.println("╚═════════════════════════════════════════╝");
         System.out.println("");
     }
+
+//    This to launch a message when the array is empty
+
+    private void messageEmptyArray(ArrayList<Gun> list){
+        if (list.isEmpty()){
+            System.out.println("The armory is empty of weapons");
+        }
+    }
+
 
 }
 

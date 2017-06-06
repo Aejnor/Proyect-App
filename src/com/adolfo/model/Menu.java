@@ -52,7 +52,6 @@ public class Menu {
                     showWeapon();
                     break;
 
-
             }
         }
     }
@@ -64,7 +63,7 @@ public class Menu {
 
         Scanner input = new Scanner(System.in);
 
-        int option;
+        int option = 0;
 
         System.out.println("*********************************");
         System.out.println("*      1 - Add weapon           *");
@@ -73,10 +72,17 @@ public class Menu {
         System.out.println("*      0 - Exit                 *");
         System.out.println("*********************************");
         System.out.println("Option: ");
-
-
-        option = input.nextInt();
-
+        try {
+            option = input.nextInt();
+            if (option < 0){
+                System.out.println("Choose a valid value, please.");
+            }else if (option > 3){
+                System.out.println("Choose a valid value, please.");
+            }
+        } catch (InputMismatchException e) {
+            System.out.println("Invalid value, choose one that is in the list");
+            menuInicial();
+        }
         return option;
 
     }
@@ -86,7 +92,7 @@ public class Menu {
     public static int selectWeapons() {
         Scanner input = new Scanner(System.in);
 
-        int option;
+        int option = 0;
 
         System.out.println("***********************************************");
         System.out.println("*              1 - Assault Rifles             *");
@@ -95,12 +101,21 @@ public class Menu {
         System.out.println("*              4 - Sniper Rifles              *");
         System.out.println("*              0 - Go back                    *");
         System.out.println("***********************************************");
-        option = input.nextInt();
+        try {
+            System.out.println("Option: ");
+            option = input.nextInt();
+            if (option < 0){
+                System.out.println("Choose a valid value, please.");
+            }else if (option > 3) {
+                System.out.println("Choose a valid value, please.");
+            }
+            } catch (InputMismatchException e) {
+            System.out.println("Invalid value, we return you to the main menu.");
+        }
         return option;
-
     }
 
-//        Add weapons options
+    //        Add weapons options
     private static int menuAddWeapon() {
 
         int option;
@@ -139,7 +154,7 @@ public class Menu {
     }
 
 
-//      Print weapons options
+    //      Print weapons options
     private static int menuShowWeapon() {
         int option;
         option = selectWeapons();
@@ -173,7 +188,7 @@ public class Menu {
 
     }
 
-//        Delete weapons options
+    //        Delete weapons options
     private static int menuDeleteWeapon() {
         int option;
         option = selectWeapons();
