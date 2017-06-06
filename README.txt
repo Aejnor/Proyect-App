@@ -48,12 +48,12 @@ ________________________________________ DOCUMENTATION OF THE APP ______________
 - Two helpers methods to use them when we want to launch some message about any type of exception that launches the program.
 
 
-_____________________________________ What i want to add in a future __________________________________________
+_____________________________________ What i want to add in a future ______________________________________
 
 
 - Add some methods to edit the weapon you want, if you fail in the introduction of data.
 - Add some graphic enviorement.
-- Add connection to a DB to have the weapons always with some new features like some bid webpages for if you want to buy any of them.
+- Add connection to a DB to have the weapons always with some new features like some bid webpages for if    you want to buy any of them.
 - Add a method to find the weapon the user select to find then in the webpage i already tell you.
 - In the added graphic enviorement, add pictures of the weapons and more info about them. 
 
