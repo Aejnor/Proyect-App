@@ -51,6 +51,11 @@ public class Menu {
                 case 3:
                     showWeapon();
                     break;
+                case 4:
+//                    modifyWeapon();
+                    break;
+                case 5:
+                    ordinateWeaponByGauge();
 
             }
         }
@@ -70,6 +75,10 @@ public class Menu {
         System.out.println("*      1 - Add weapon           *");
         System.out.println("*      2 - Delete weapon        *");
         System.out.println("*      3 - Show weapons         *");
+        System.out.println("*      4 - Modify weapon        *");
+        System.out.println("*      5 - Compare by gauge     *");
+        System.out.println("*      6 - Compare by name      *");
+        System.out.println("*      7 - Compare by magazine  *");
         System.out.println("*      0 - Exit                 *");
         System.out.println("*********************************");
         System.out.println("Option: ");
@@ -79,7 +88,7 @@ public class Menu {
             input.nextLine();
             if (option < 0){
                 System.out.println("Choose a valid value, please.");
-            }else if (option > 3){
+            }else if (option > 7){
                 System.out.println("Choose a valid value, please.");
             }
         } catch (InputMismatchException e) {
@@ -110,7 +119,7 @@ public class Menu {
             input.nextLine();
             if (option < 0){
                 System.out.println("Choose a valid value, please.");
-            }else if (option > 3) {
+            }else if (option > 4) {
                 System.out.println("Choose a valid value, please.");
             }
             } catch (InputMismatchException e) {
@@ -216,5 +225,51 @@ public class Menu {
             }
         }
     }
+
+    private static int menuModifyWeapon() {
+        int option;
+        option = selectWeapons();
+        return option;
+
+    }
+
+    public static void modifyweapon(){
+
+    }
+
+
+    private static int menuOrdinateWeaponByGauge() {
+        int option;
+        option = selectWeapons();
+        return option;
+
+    }
+
+    public static void ordinateWeaponByGauge() {
+
+        int option;
+
+        while ((option = menuOrdinateWeaponByGauge()) != 0) {
+
+            switch (option) {
+
+                case 1:
+                    app.ordinationAssaultRiflesByGauge();
+                    break;
+                case 2:
+                    app.ordinationRiflesByGauge();
+                    break;
+                case 3:
+                    app.ordinationSubMachineByGauge();
+                    break;
+                case 4:
+                    app.ordinationSniperRiflesByGauge();
+                    break;
+            }
+        }
+    }
+
+
+
 }
 

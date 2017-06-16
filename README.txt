@@ -37,9 +37,9 @@ ________________________________________ DOCUMENTATION OF THE APP ______________
 
 - Attributes of the class: 
 	- ArrayList<Gun> rifles
-        - ArrayList<Gun> assaultRifles
-    	- ArrayList<Gun> subMachineGuns
-    	- ArrayList<Gun> sniperRifles 
+    - ArrayList<Gun> assaultRifles
+  	- ArrayList<Gun> subMachineGuns
+   	- ArrayList<Gun> sniperRifles
 
 - One constructor who initializes the arrays.
 - Getters and setters for the attributes.
@@ -55,5 +55,4 @@ _____________________________________ What i want to add in a future ___________
 - Add some graphic enviorement.
 - Add connection to a DB to have the weapons always with some new features like some bid webpages for if    you want to buy any of them.
 - Add a method to find the weapon the user select to find then in the webpage i already tell you.
-- In the added graphic enviorement, add pictures of the weapons and more info about them. 
-
+- In the added graphic enviorement, add pictures of the weapons and more info about them.

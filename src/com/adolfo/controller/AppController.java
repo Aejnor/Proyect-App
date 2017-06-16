@@ -5,6 +5,7 @@ import com.sun.org.apache.xpath.internal.SourceTree;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -82,6 +83,7 @@ public class AppController {
 
         System.out.println("Write the origin place of the rifle: ");
         originplace = input.nextLine();
+
         try {
             System.out.println("Write how many bullets have the rifle in the magazine: ");
             ammunitionClip = input.nextInt();
@@ -90,12 +92,11 @@ public class AppController {
             gauge = input.nextDouble();
         } catch (InputMismatchException e) {
             messageOfMismatch();
-
-
         }
 
-        this.addRifle(new Gun(name, originplace, ammunitionClip, gauge));
-
+        if (ammunitionClip != 0 && gauge != 0) {
+            this.addRifle(new Gun(name, originplace, ammunitionClip, gauge));
+        }
     }
 
     public void addAssaultRifle() {
@@ -121,8 +122,9 @@ public class AppController {
         } catch (InputMismatchException e) {
             messageOfMismatch();
         }
-
-        this.addAssaultRifle(new Gun(name, originplace, ammunitionClip, gauge));
+        if (ammunitionClip != 0 && gauge != 0) {
+            this.addAssaultRifle(new Gun(name, originplace, ammunitionClip, gauge));
+        }
     }
 
     public void addSniperRifle() {
@@ -147,8 +149,9 @@ public class AppController {
         } catch (InputMismatchException e) {
             messageOfMismatch();
         }
-
-        this.addSniperRifle(new Gun(name, originplace, ammunitionClip, gauge));
+        if (ammunitionClip != 0 && gauge != 0) {
+            this.addSniperRifle(new Gun(name, originplace, ammunitionClip, gauge));
+        }
     }
 
     public void addSubMachine() {
@@ -173,8 +176,9 @@ public class AppController {
         } catch (InputMismatchException e) {
             messageOfMismatch();
         }
-
-        this.addSubMachineGuns(new Gun(name, originplace, ammunitionClip, gauge));
+        if (ammunitionClip != 0 && gauge != 0) {
+            this.addSubMachineGuns(new Gun(name, originplace, ammunitionClip, gauge));
+        }
     }
 
     //      Delete methods for all the type of weapons
@@ -259,6 +263,7 @@ public class AppController {
 
         int index = 1;
         for (Gun i : assaultRifles) {
+//        We go through the list and add an index to the objects listed, exactly the same in the other methods
             System.out.print(index + " - ");
             System.out.println(i);
             index++;
@@ -270,6 +275,7 @@ public class AppController {
 
         int index = 1;
         for (Gun i : sniperRifles) {
+//        We go through the list and add an index to the objects listed, exactly the same in the other methods
             System.out.print(index + " - ");
             System.out.println(i);
             index++;
@@ -281,16 +287,71 @@ public class AppController {
 
         int index = 1;
         for (Gun i : subMachineGuns) {
+//        We go through the list and add an index to the objects listed, exactly the same in the other methods
             System.out.print(index + " - ");
             System.out.println(i);
             index++;
         }
     }
 
+    //    Ordination by gauge
 
-    // Helpers methods
+    public void ordinationRiflesByGauge() {
+        Collections.sort(rifles, Gun.comparingbygauge);
+        System.out.println("╔════════════════════════╗");
+        System.out.println("║ Ordination by gauge ║ ");
+        System.out.println("╚════════════════════════╝");
 
-//    We will use this methods when we want to launch a message for a MismatchException
+        for (Gun rifles : rifles) {
+            System.out.println(rifles);
+        }
+    }
+
+    public void ordinationAssaultRiflesByGauge() {
+        Collections.sort(assaultRifles, Gun.comparingbygauge);
+        System.out.println("╔════════════════════════╗");
+        System.out.println("║ Ordination by gauge ║ ");
+        System.out.println("╚════════════════════════╝");
+
+        for (Gun assaultRifles : assaultRifles) {
+            System.out.println(assaultRifles);
+        }
+    }
+
+    public void ordinationSubMachineByGauge() {
+        Collections.sort(subMachineGuns, Gun.comparingbygauge);
+        System.out.println("╔════════════════════════╗");
+        System.out.println("║ Ordination by gauge ║ ");
+        System.out.println("╚════════════════════════╝");
+
+        for (Gun subMachineGun : subMachineGuns) {
+            System.out.println(subMachineGuns);
+        }
+    }
+
+    public void ordinationSniperRiflesByGauge() {
+        Collections.sort(sniperRifles, Gun.comparingbygauge);
+        System.out.println("╔════════════════════════╗");
+        System.out.println("║ Ordination by gauge ║ ");
+        System.out.println("╚════════════════════════╝");
+
+        for (Gun sniperRifles : sniperRifles) {
+            System.out.println(sniperRifles);
+        }
+    }
+
+
+//
+
+    public void ordinationRiflesByName(){
+
+    }
+
+
+
+        // Helpers methods
+
+//    We will use this method when we want to launch a message for a MismatchException
 
     private void messageOfMismatch() {
         System.out.println("╔════════════════════════════════════════╗");
@@ -299,7 +360,7 @@ public class AppController {
         System.out.println("");
     }
 
-//    This one for the OutOfBoundExceptions
+//    This one for the OutOfBound exceptions
 
     private void messageOutOfBound() {
         System.out.println("╔═════════════════════════════════════════╗");
@@ -310,8 +371,8 @@ public class AppController {
 
 //    This to launch a message when the array is empty
 
-    private void messageEmptyArray(ArrayList<Gun> list){
-        if (list.isEmpty()){
+    private void messageEmptyArray(ArrayList<Gun> list) {
+        if (list.isEmpty()) {
             System.out.println("The armory is empty of weapons");
         }
     }
