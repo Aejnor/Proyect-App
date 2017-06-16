@@ -1,9 +1,7 @@
 package com.adolfo.controller;
 
 import com.adolfo.model.*;
-import com.sun.org.apache.xpath.internal.SourceTree;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.InputMismatchException;
@@ -57,20 +55,18 @@ public class AppController {
     public void addRifle(Gun rifle) {
         this.rifles.add(rifle);
     }
-
     public void addAssaultRifle(Gun assaultRifle) {
         this.assaultRifles.add(assaultRifle);
     }
-
     public void addSubMachineGuns(Gun subMachineGun) {
         this.subMachineGuns.add(subMachineGun);
     }
-
     public void addSniperRifle(Gun sniperRifle) {
         this.sniperRifles.add(sniperRifle);
     }
 
     //    This ones are the "add methods" of all the type of the guns
+
     public void addRifle() {
         String name;
         String originplace;
@@ -98,7 +94,6 @@ public class AppController {
             this.addRifle(new Gun(name, originplace, ammunitionClip, gauge));
         }
     }
-
     public void addAssaultRifle() {
         String name;
         String originplace;
@@ -126,7 +121,6 @@ public class AppController {
             this.addAssaultRifle(new Gun(name, originplace, ammunitionClip, gauge));
         }
     }
-
     public void addSniperRifle() {
         String name;
         String originplace;
@@ -153,7 +147,6 @@ public class AppController {
             this.addSniperRifle(new Gun(name, originplace, ammunitionClip, gauge));
         }
     }
-
     public void addSubMachine() {
         String name;
         String originplace;
@@ -182,6 +175,7 @@ public class AppController {
     }
 
     //      Delete methods for all the type of weapons
+
     public void deleteRifle() {
 
         int index;
@@ -198,7 +192,6 @@ public class AppController {
             deleteRifle();
         }
     }
-
     public void deleteAssaultRifle() {
         int index;
         Scanner input = new Scanner(System.in);
@@ -213,7 +206,6 @@ public class AppController {
             deleteAssaultRifle();
         }
     }
-
     public void deleteSniperRifle() {
         int index;
         Scanner input = new Scanner(System.in);
@@ -228,7 +220,6 @@ public class AppController {
             deleteSniperRifle();
         }
     }
-
     public void deleteSubMachine() {
         int index;
         Scanner input = new Scanner(System.in);
@@ -245,6 +236,7 @@ public class AppController {
     }
 
     //    Show methods  for the kind of weapons
+
     public void showRifleList() {
         messageEmptyArray(rifles);
 
@@ -257,7 +249,6 @@ public class AppController {
 
         }
     }
-
     public void showAssaultRifleList() {
         messageEmptyArray(assaultRifles);
 
@@ -269,7 +260,6 @@ public class AppController {
             index++;
         }
     }
-
     public void showSniperRifleList() {
         messageEmptyArray(sniperRifles);
 
@@ -281,7 +271,6 @@ public class AppController {
             index++;
         }
     }
-
     public void showSubMachineList() {
         messageEmptyArray(subMachineGuns);
 
@@ -294,62 +283,196 @@ public class AppController {
         }
     }
 
-    //    Ordination by gauge
+    //    Methods to ordinate the weapon calibers by weapon type
 
     public void ordinationRiflesByGauge() {
-        Collections.sort(rifles, Gun.comparingbygauge);
+        Collections.sort(rifles, Gun.comparingbygauge.reversed());
         System.out.println("╔════════════════════════╗");
         System.out.println("║ Ordination by gauge ║ ");
         System.out.println("╚════════════════════════╝");
 
-        for (Gun rifles : rifles) {
-            System.out.println(rifles);
+        for (Gun guns : rifles) {
+            System.out.println(guns);
         }
     }
-
     public void ordinationAssaultRiflesByGauge() {
-        Collections.sort(assaultRifles, Gun.comparingbygauge);
+        Collections.sort(assaultRifles, Gun.comparingbygauge.reversed());
         System.out.println("╔════════════════════════╗");
         System.out.println("║ Ordination by gauge ║ ");
         System.out.println("╚════════════════════════╝");
 
-        for (Gun assaultRifles : assaultRifles) {
-            System.out.println(assaultRifles);
+        for (Gun guns : assaultRifles) {
+            System.out.println(guns);
         }
     }
-
     public void ordinationSubMachineByGauge() {
-        Collections.sort(subMachineGuns, Gun.comparingbygauge);
+        Collections.sort(subMachineGuns, Gun.comparingbygauge.reversed());
         System.out.println("╔════════════════════════╗");
         System.out.println("║ Ordination by gauge ║ ");
         System.out.println("╚════════════════════════╝");
 
-        for (Gun subMachineGun : subMachineGuns) {
-            System.out.println(subMachineGuns);
+        for (Gun guns : subMachineGuns) {
+            System.out.println(guns);
         }
     }
-
     public void ordinationSniperRiflesByGauge() {
-        Collections.sort(sniperRifles, Gun.comparingbygauge);
+        Collections.sort(sniperRifles, Gun.comparingbygauge.reversed());
         System.out.println("╔════════════════════════╗");
         System.out.println("║ Ordination by gauge ║ ");
         System.out.println("╚════════════════════════╝");
 
-        for (Gun sniperRifles : sniperRifles) {
-            System.out.println(sniperRifles);
+        for (Gun guns : sniperRifles) {
+            System.out.println(guns);
         }
     }
 
 
-//
+//  Methods to ordinate alphabetically the weapons by their names
 
-    public void ordinationRiflesByName(){
+    public void alphabeticOrdinationRiflesByName() {
+        Collections.sort(rifles, Gun.comparingByName);
+        System.out.println("╔══════════════════════════╗");
+        System.out.println("║ Alphabetic ordenation ║ ");
+        System.out.println("╚══════════════════════════╝");
 
+        for (Gun guns : rifles) {
+            System.out.println(guns);
+        }
+    }
+    public void alphabeticOrdinationSniperRiflesByName() {
+        Collections.sort(sniperRifles, Gun.comparingByName);
+        System.out.println("╔══════════════════════════╗");
+        System.out.println("║ Alphabetic ordenation ║ ");
+        System.out.println("╚══════════════════════════╝");
+
+        for (Gun guns : sniperRifles) {
+            System.out.println(guns);
+        }
+    }
+    public void alphabeticOrdinationSubMachineByName() {
+        Collections.sort(subMachineGuns, Gun.comparingByName);
+        System.out.println("╔══════════════════════════╗");
+        System.out.println("║ Alphabetic ordenation ║ ");
+        System.out.println("╚══════════════════════════╝");
+
+        for (Gun guns : subMachineGuns) {
+            System.out.println(guns);
+        }
+    }
+    public void alphabeticOrdinationAssaultRiflesByName() {
+        Collections.sort(assaultRifles, Gun.comparingByName);
+        System.out.println("╔══════════════════════════╗");
+        System.out.println("║ Alphabetic ordenation ║ ");
+        System.out.println("╚══════════════════════════╝");
+
+        for (Gun guns : assaultRifles) {
+            System.out.println(guns);
+        }
+    }
+
+//  Methods to ordinate alphabetically the weapons by their origin country
+
+    public void alphabeticOrdinationRiflesByCountry() {
+        Collections.sort(rifles, Gun.comparingByCountry);
+        System.out.println("╔══════════════════════════╗");
+        System.out.println("║ Alphabetic ordenation ║ ");
+        System.out.println("║   by origin country   ║ ");
+        System.out.println("╚══════════════════════════╝");
+
+        for (Gun guns : rifles) {
+            System.out.println(guns);
+        }
+    }
+    public void alphabeticOrdinationSniperRiflesByCountry() {
+        Collections.sort(sniperRifles, Gun.comparingByCountry);
+        System.out.println("╔══════════════════════════╗");
+        System.out.println("║ Alphabetic ordenation ║ ");
+        System.out.println("║   by origin country   ║ ");
+        System.out.println("╚══════════════════════════╝");
+
+        for (Gun guns : sniperRifles) {
+            System.out.println(guns);
+        }
+    }
+    public void alphabeticOrdinationSubMachineByCountry() {
+        Collections.sort(subMachineGuns, Gun.comparingByCountry);
+        System.out.println("╔══════════════════════════╗");
+        System.out.println("║ Alphabetic ordenation ║ ");
+        System.out.println("║   by origin country   ║ ");
+        System.out.println("╚══════════════════════════╝");
+
+        for (Gun guns : subMachineGuns) {
+            System.out.println(guns);
+        }
+    }
+    public void alphabeticOrdinationAssaultRiflesByCountry() {
+        Collections.sort(assaultRifles, Gun.comparingByCountry);
+        System.out.println("╔══════════════════════════╗");
+        System.out.println("║ Alphabetic ordenation ║ ");
+        System.out.println("║   by origin country   ║ ");
+        System.out.println("╚══════════════════════════╝");
+
+        for (Gun guns : assaultRifles) {
+            System.out.println(guns);
+        }
+    }
+
+//  Methods to ordinate the weapons by their amount of ammo in the magazine
+
+    public void ordinationRiflesByAmmoInMagazine() {
+        Collections.sort(rifles, Gun.comparingByAmmoclip);
+        System.out.println("╔═══════════════════════════╗");
+        System.out.println("║ Ordenation by quantity ║ ");
+        System.out.println("║     in the magazine    ║ ");
+        System.out.println("╚═══════════════════════════╝");
+
+        for (Gun gun : rifles) {
+            System.out.println(gun);
+        }
+    }
+    public void ordinationSniperRiflesByAmmoInMagazine() {
+        Collections.sort(sniperRifles, Gun.comparingByAmmoclip);
+        System.out.println("╔═══════════════════════════╗");
+        System.out.println("║ Ordenation by quantity ║ ");
+        System.out.println("║     in the magazine    ║ ");
+        System.out.println("╚═══════════════════════════╝");
+
+        for (Gun gun : sniperRifles) {
+            System.out.println(gun);
+        }
+    }
+    public void ordinationSubMachineByAmmoInMagazine() {
+        Collections.sort(subMachineGuns, Gun.comparingByAmmoclip);
+        System.out.println("╔═══════════════════════════╗");
+        System.out.println("║ Ordenation by quantity ║ ");
+        System.out.println("║     in the magazine    ║ ");
+        System.out.println("╚═══════════════════════════╝");
+
+        for (Gun gun : subMachineGuns) {
+            System.out.println(gun);
+        }
+    }
+    public void ordinationAssaultRiflesByAmmoInMagazine() {
+        Collections.sort(assaultRifles, Gun.comparingByAmmoclip);
+        System.out.println("╔═══════════════════════════╗");
+        System.out.println("║ Ordenation by quantity ║ ");
+        System.out.println("║     in the magazine    ║ ");
+        System.out.println("╚═══════════════════════════╝");
+
+        for (Gun gun : assaultRifles) {
+            System.out.println(gun);
+        }
     }
 
 
 
-        // Helpers methods
+
+
+
+
+
+
+    // Helpers methods
 
 //    We will use this method when we want to launch a message for a MismatchException
 

@@ -17,7 +17,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/adolfo/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="294">
-              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -26,8 +26,8 @@
       <file leaf-file-name="Gun.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/adolfo/model/Gun.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="86" column="6" lean-forward="true" selection-start-line="86" selection-start-column="6" selection-end-line="86" selection-end-column="6" />
+            <state relative-caret-position="483">
+              <caret line="91" column="78" lean-forward="false" selection-start-line="91" selection-start-column="78" selection-end-line="91" selection-end-column="78" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1022#1023#0" expanded="true" />
@@ -37,23 +37,25 @@
                 <element signature="e#1650#1651#0" expanded="true" />
                 <element signature="e#1725#1726#0" expanded="true" />
                 <element signature="e#1872#1873#0" expanded="true" />
-                <element signature="e#1951#1952#0" expanded="true" />
-                <element signature="e#2102#2103#0" expanded="true" />
-                <element signature="e#2182#2183#0" expanded="true" />
+                <element signature="e#1949#1950#0" expanded="true" />
+                <element signature="e#2099#2100#0" expanded="true" />
+                <element signature="e#2190#2191#0" expanded="true" />
+                <element signature="e#2341#2342#0" expanded="true" />
+                <element signature="e#2419#2420#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AppController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AppController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/adolfo/controller/AppController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-735">
-              <caret line="86" column="6" lean-forward="true" selection-start-line="86" selection-start-column="6" selection-end-line="86" selection-end-column="6" />
+            <state relative-caret-position="378">
+              <caret line="443" column="0" lean-forward="false" selection-start-line="443" selection-start-column="0" selection-end-line="443" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1202#1203#0" expanded="true" />
-                <element signature="e#1240#1241#0" expanded="true" />
+                <element signature="method#AppController#0;class#AppController#0" expanded="false" />
+                <element signature="method#addRifle#1;class#AppController#0" expanded="false" />
                 <element signature="method#addAssaultRifle#1;class#AppController#0" expanded="false" />
                 <element signature="method#addSniperRifle#1;class#AppController#0" expanded="false" />
                 <element signature="method#addSubMachine#0;class#AppController#0" expanded="false" />
@@ -68,6 +70,19 @@
                 <element signature="method#ordinationRiflesByGauge#0;class#AppController#0" expanded="false" />
                 <element signature="method#ordinationAssaultRiflesByGauge#0;class#AppController#0" expanded="false" />
                 <element signature="method#ordinationSubMachineByGauge#0;class#AppController#0" expanded="false" />
+                <element signature="method#ordinationSniperRiflesByGauge#0;class#AppController#0" expanded="false" />
+                <element signature="method#alphabeticOrdinationRiflesByName#0;class#AppController#0" expanded="false" />
+                <element signature="method#alphabeticOrdinationSniperRiflesByName#0;class#AppController#0" expanded="false" />
+                <element signature="method#alphabeticOrdinationSubMachineByName#0;class#AppController#0" expanded="false" />
+                <element signature="method#alphabeticOrdinationAssaultRiflesByName#0;class#AppController#0" expanded="false" />
+                <element signature="method#alphabeticOrdinationRiflesByCountry#0;class#AppController#0" expanded="false" />
+                <element signature="method#alphabeticOrdinationSniperRiflesByCountry#0;class#AppController#0" expanded="false" />
+                <element signature="method#alphabeticOrdinationSubMachineByCountry#0;class#AppController#0" expanded="false" />
+                <element signature="method#alphabeticOrdinationAssaultRiflesByCountry#0;class#AppController#0" expanded="false" />
+                <element signature="method#ordinationRiflesByAmmoInMagazine#0;class#AppController#0" expanded="false" />
+                <element signature="method#ordinationSniperRiflesByAmmoInMagazine#0;class#AppController#0" expanded="false" />
+                <element signature="method#ordinationSubMachineByAmmoInMagazine#0;class#AppController#0" expanded="false" />
+                <element signature="method#ordinationAssaultRiflesByAmmoInMagazine#0;class#AppController#0" expanded="false" />
                 <element signature="method#messageOfMismatch#0;class#AppController#0" expanded="false" />
                 <element signature="method#messageOutOfBound#0;class#AppController#0" expanded="false" />
                 <element signature="method#messageEmptyArray#0;class#AppController#0" expanded="false" />
@@ -76,15 +91,30 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Menu.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Menu.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/adolfo/model/Menu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="491">
-              <caret line="271" column="0" lean-forward="false" selection-start-line="271" selection-start-column="0" selection-end-line="271" selection-end-column="0" />
+            <state relative-caret-position="672">
+              <caret line="374" column="4" lean-forward="true" selection-start-line="374" selection-start-column="4" selection-end-line="374" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#Menu#0;class#Menu#0" expanded="false" />
                 <element signature="method#fillArrays#0;class#Menu#0" expanded="false" />
+                <element signature="method#menuAddWeapon#0;class#Menu#0" expanded="false" />
+                <element signature="method#addWeapon#0;class#Menu#0" expanded="false" />
+                <element signature="method#menuShowWeapon#0;class#Menu#0" expanded="false" />
+                <element signature="method#showWeapon#0;class#Menu#0" expanded="false" />
+                <element signature="method#menuDeleteWeapon#0;class#Menu#0" expanded="false" />
+                <element signature="method#deleteWeapon#0;class#Menu#0" expanded="false" />
+                <element signature="method#menuModifyWeapon#0;class#Menu#0" expanded="false" />
+                <element signature="method#menuOrdinateWeaponByGauge#0;class#Menu#0" expanded="false" />
+                <element signature="method#ordinateWeaponByGauge#0;class#Menu#0" expanded="false" />
+                <element signature="method#menuAlphabeticOrdination#0;class#Menu#0" expanded="false" />
+                <element signature="method#alphabeticOrdination#0;class#Menu#0" expanded="false" />
+                <element signature="method#menuAlphabeticOrdinationByCountry#0;class#Menu#0" expanded="false" />
+                <element signature="method#alphabeticOrdinationByCountry#0;class#Menu#0" expanded="false" />
+                <element signature="method#menuOrdinationByAmountOfCharger#0;class#Menu#0" expanded="false" />
+                <element signature="method#ordinationByAmmoInMagazine#0;class#Menu#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -120,8 +150,8 @@
         <option value="$PROJECT_DIR$/src/com/adolfo/Main.java" />
         <option value="$PROJECT_DIR$/README.txt" />
         <option value="$PROJECT_DIR$/src/com/adolfo/model/Gun.java" />
-        <option value="$PROJECT_DIR$/src/com/adolfo/model/Menu.java" />
         <option value="$PROJECT_DIR$/src/com/adolfo/controller/AppController.java" />
+        <option value="$PROJECT_DIR$/src/com/adolfo/model/Menu.java" />
       </list>
     </option>
   </component>
@@ -721,12 +751,12 @@
       <option name="presentableId" value="Default" />
       <updated>1496613417943</updated>
       <workItem from="1496613420809" duration="1806000" />
-      <workItem from="1496744011075" duration="38527000" />
+      <workItem from="1496744011075" duration="51154000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40333000" />
+    <option name="totallyTimeSpent" value="52960000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -809,8 +839,14 @@
           <properties />
           <option name="timeStamp" value="18" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/adolfo/controller/AppController.java</url>
+          <line>342</line>
+          <properties />
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="19" />
+      <option name="time" value="35" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -835,6 +871,21 @@
             <element signature="imports" expanded="true" />
             <element signature="method#Menu#0;class#Menu#0" expanded="false" />
             <element signature="method#fillArrays#0;class#Menu#0" expanded="false" />
+            <element signature="method#menuAddWeapon#0;class#Menu#0" expanded="false" />
+            <element signature="method#addWeapon#0;class#Menu#0" expanded="false" />
+            <element signature="method#menuShowWeapon#0;class#Menu#0" expanded="false" />
+            <element signature="method#showWeapon#0;class#Menu#0" expanded="false" />
+            <element signature="method#menuDeleteWeapon#0;class#Menu#0" expanded="false" />
+            <element signature="method#deleteWeapon#0;class#Menu#0" expanded="false" />
+            <element signature="method#menuModifyWeapon#0;class#Menu#0" expanded="false" />
+            <element signature="method#menuOrdinateWeaponByGauge#0;class#Menu#0" expanded="false" />
+            <element signature="method#ordinateWeaponByGauge#0;class#Menu#0" expanded="false" />
+            <element signature="method#menuAlphabeticOrdination#0;class#Menu#0" expanded="false" />
+            <element signature="method#alphabeticOrdination#0;class#Menu#0" expanded="false" />
+            <element signature="method#menuAlphabeticOrdinationByCountry#0;class#Menu#0" expanded="false" />
+            <element signature="method#alphabeticOrdinationByCountry#0;class#Menu#0" expanded="false" />
+            <element signature="method#menuOrdinationByAmountOfCharger#0;class#Menu#0" expanded="false" />
+            <element signature="method#ordinationByAmmoInMagazine#0;class#Menu#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -852,9 +903,11 @@
             <element signature="e#1650#1651#0" expanded="true" />
             <element signature="e#1725#1726#0" expanded="true" />
             <element signature="e#1872#1873#0" expanded="true" />
-            <element signature="e#1951#1952#0" expanded="true" />
-            <element signature="e#2102#2103#0" expanded="true" />
-            <element signature="e#2182#2183#0" expanded="true" />
+            <element signature="e#1949#1950#0" expanded="true" />
+            <element signature="e#2099#2100#0" expanded="true" />
+            <element signature="e#2190#2191#0" expanded="true" />
+            <element signature="e#2341#2342#0" expanded="true" />
+            <element signature="e#2419#2420#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -865,8 +918,8 @@
           <caret line="166" column="0" lean-forward="false" selection-start-line="166" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1202#1203#0" expanded="true" />
-            <element signature="e#1240#1241#0" expanded="true" />
+            <element signature="method#AppController#0;class#AppController#0" expanded="false" />
+            <element signature="method#addRifle#1;class#AppController#0" expanded="false" />
             <element signature="method#addAssaultRifle#1;class#AppController#0" expanded="false" />
             <element signature="method#addSniperRifle#1;class#AppController#0" expanded="false" />
             <element signature="method#addSubMachine#0;class#AppController#0" expanded="false" />
@@ -881,6 +934,19 @@
             <element signature="method#ordinationRiflesByGauge#0;class#AppController#0" expanded="false" />
             <element signature="method#ordinationAssaultRiflesByGauge#0;class#AppController#0" expanded="false" />
             <element signature="method#ordinationSubMachineByGauge#0;class#AppController#0" expanded="false" />
+            <element signature="method#ordinationSniperRiflesByGauge#0;class#AppController#0" expanded="false" />
+            <element signature="method#alphabeticOrdinationRiflesByName#0;class#AppController#0" expanded="false" />
+            <element signature="method#alphabeticOrdinationSniperRiflesByName#0;class#AppController#0" expanded="false" />
+            <element signature="method#alphabeticOrdinationSubMachineByName#0;class#AppController#0" expanded="false" />
+            <element signature="method#alphabeticOrdinationAssaultRiflesByName#0;class#AppController#0" expanded="false" />
+            <element signature="method#alphabeticOrdinationRiflesByCountry#0;class#AppController#0" expanded="false" />
+            <element signature="method#alphabeticOrdinationSniperRiflesByCountry#0;class#AppController#0" expanded="false" />
+            <element signature="method#alphabeticOrdinationSubMachineByCountry#0;class#AppController#0" expanded="false" />
+            <element signature="method#alphabeticOrdinationAssaultRiflesByCountry#0;class#AppController#0" expanded="false" />
+            <element signature="method#ordinationRiflesByAmmoInMagazine#0;class#AppController#0" expanded="false" />
+            <element signature="method#ordinationSniperRiflesByAmmoInMagazine#0;class#AppController#0" expanded="false" />
+            <element signature="method#ordinationSubMachineByAmmoInMagazine#0;class#AppController#0" expanded="false" />
+            <element signature="method#ordinationAssaultRiflesByAmmoInMagazine#0;class#AppController#0" expanded="false" />
             <element signature="method#messageOfMismatch#0;class#AppController#0" expanded="false" />
             <element signature="method#messageOutOfBound#0;class#AppController#0" expanded="false" />
             <element signature="method#messageEmptyArray#0;class#AppController#0" expanded="false" />
@@ -896,30 +962,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/adolfo/Main.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/Collections.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="-221">
+          <caret line="173" column="27" lean-forward="false" selection-start-line="173" selection-start-column="27" selection-end-line="173" selection-end-column="27" />
+          <folding>
+            <element signature="e#7284#7285#0" expanded="false" />
+            <element signature="e#7312#7313#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/adolfo/model/Menu.java">
+    <entry file="file://$PROJECT_DIR$/src/com/adolfo/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="491">
-          <caret line="271" column="0" lean-forward="false" selection-start-line="271" selection-start-column="0" selection-end-line="271" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#Menu#0;class#Menu#0" expanded="false" />
-            <element signature="method#fillArrays#0;class#Menu#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="294">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/adolfo/model/Gun.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="86" column="6" lean-forward="true" selection-start-line="86" selection-start-column="6" selection-end-line="86" selection-end-column="6" />
+        <state relative-caret-position="483">
+          <caret line="91" column="78" lean-forward="false" selection-start-line="91" selection-start-column="78" selection-end-line="91" selection-end-column="78" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1022#1023#0" expanded="true" />
@@ -929,21 +994,23 @@
             <element signature="e#1650#1651#0" expanded="true" />
             <element signature="e#1725#1726#0" expanded="true" />
             <element signature="e#1872#1873#0" expanded="true" />
-            <element signature="e#1951#1952#0" expanded="true" />
-            <element signature="e#2102#2103#0" expanded="true" />
-            <element signature="e#2182#2183#0" expanded="true" />
+            <element signature="e#1949#1950#0" expanded="true" />
+            <element signature="e#2099#2100#0" expanded="true" />
+            <element signature="e#2190#2191#0" expanded="true" />
+            <element signature="e#2341#2342#0" expanded="true" />
+            <element signature="e#2419#2420#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/adolfo/controller/AppController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-735">
-          <caret line="86" column="6" lean-forward="true" selection-start-line="86" selection-start-column="6" selection-end-line="86" selection-end-column="6" />
+        <state relative-caret-position="378">
+          <caret line="443" column="0" lean-forward="false" selection-start-line="443" selection-start-column="0" selection-end-line="443" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1202#1203#0" expanded="true" />
-            <element signature="e#1240#1241#0" expanded="true" />
+            <element signature="method#AppController#0;class#AppController#0" expanded="false" />
+            <element signature="method#addRifle#1;class#AppController#0" expanded="false" />
             <element signature="method#addAssaultRifle#1;class#AppController#0" expanded="false" />
             <element signature="method#addSniperRifle#1;class#AppController#0" expanded="false" />
             <element signature="method#addSubMachine#0;class#AppController#0" expanded="false" />
@@ -958,9 +1025,49 @@
             <element signature="method#ordinationRiflesByGauge#0;class#AppController#0" expanded="false" />
             <element signature="method#ordinationAssaultRiflesByGauge#0;class#AppController#0" expanded="false" />
             <element signature="method#ordinationSubMachineByGauge#0;class#AppController#0" expanded="false" />
+            <element signature="method#ordinationSniperRiflesByGauge#0;class#AppController#0" expanded="false" />
+            <element signature="method#alphabeticOrdinationRiflesByName#0;class#AppController#0" expanded="false" />
+            <element signature="method#alphabeticOrdinationSniperRiflesByName#0;class#AppController#0" expanded="false" />
+            <element signature="method#alphabeticOrdinationSubMachineByName#0;class#AppController#0" expanded="false" />
+            <element signature="method#alphabeticOrdinationAssaultRiflesByName#0;class#AppController#0" expanded="false" />
+            <element signature="method#alphabeticOrdinationRiflesByCountry#0;class#AppController#0" expanded="false" />
+            <element signature="method#alphabeticOrdinationSniperRiflesByCountry#0;class#AppController#0" expanded="false" />
+            <element signature="method#alphabeticOrdinationSubMachineByCountry#0;class#AppController#0" expanded="false" />
+            <element signature="method#alphabeticOrdinationAssaultRiflesByCountry#0;class#AppController#0" expanded="false" />
+            <element signature="method#ordinationRiflesByAmmoInMagazine#0;class#AppController#0" expanded="false" />
+            <element signature="method#ordinationSniperRiflesByAmmoInMagazine#0;class#AppController#0" expanded="false" />
+            <element signature="method#ordinationSubMachineByAmmoInMagazine#0;class#AppController#0" expanded="false" />
+            <element signature="method#ordinationAssaultRiflesByAmmoInMagazine#0;class#AppController#0" expanded="false" />
             <element signature="method#messageOfMismatch#0;class#AppController#0" expanded="false" />
             <element signature="method#messageOutOfBound#0;class#AppController#0" expanded="false" />
             <element signature="method#messageEmptyArray#0;class#AppController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/adolfo/model/Menu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="374" column="4" lean-forward="true" selection-start-line="374" selection-start-column="4" selection-end-line="374" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#Menu#0;class#Menu#0" expanded="false" />
+            <element signature="method#fillArrays#0;class#Menu#0" expanded="false" />
+            <element signature="method#menuAddWeapon#0;class#Menu#0" expanded="false" />
+            <element signature="method#addWeapon#0;class#Menu#0" expanded="false" />
+            <element signature="method#menuShowWeapon#0;class#Menu#0" expanded="false" />
+            <element signature="method#showWeapon#0;class#Menu#0" expanded="false" />
+            <element signature="method#menuDeleteWeapon#0;class#Menu#0" expanded="false" />
+            <element signature="method#deleteWeapon#0;class#Menu#0" expanded="false" />
+            <element signature="method#menuModifyWeapon#0;class#Menu#0" expanded="false" />
+            <element signature="method#menuOrdinateWeaponByGauge#0;class#Menu#0" expanded="false" />
+            <element signature="method#ordinateWeaponByGauge#0;class#Menu#0" expanded="false" />
+            <element signature="method#menuAlphabeticOrdination#0;class#Menu#0" expanded="false" />
+            <element signature="method#alphabeticOrdination#0;class#Menu#0" expanded="false" />
+            <element signature="method#menuAlphabeticOrdinationByCountry#0;class#Menu#0" expanded="false" />
+            <element signature="method#alphabeticOrdinationByCountry#0;class#Menu#0" expanded="false" />
+            <element signature="method#menuOrdinationByAmountOfCharger#0;class#Menu#0" expanded="false" />
+            <element signature="method#ordinationByAmmoInMagazine#0;class#Menu#0" expanded="false" />
           </folding>
         </state>
       </provider>

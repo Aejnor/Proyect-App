@@ -82,14 +82,21 @@ public class Gun {
     public static Comparator<Gun> comparingByName = new Comparator<Gun>() {
         @Override
         public int compare(Gun a1, Gun a2) {
-            return  a1.getName().compareToIgnoreCase(a2.getName()) ;
+            return a1.getName().compareToIgnoreCase(a2.getName());
+        }
+    };
+
+    public static Comparator<Gun> comparingByCountry = new Comparator<Gun>() {
+        @Override
+        public int compare(Gun a1, Gun a2) {
+            return a1.getOriginplace().compareToIgnoreCase(a2.getOriginplace());
         }
     };
 
     public static Comparator<Gun> comparingByAmmoclip = new Comparator<Gun>() {
         @Override
         public int compare(Gun a1, Gun a2) {
-            return  a1.getAmmunitionClip() - a2.getAmmunitionClip() ;
+            return a1.getAmmunitionClip() - a2.getAmmunitionClip();
         }
     };
 }
