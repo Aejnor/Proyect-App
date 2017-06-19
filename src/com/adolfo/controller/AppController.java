@@ -296,22 +296,185 @@ public class AppController {
 
     public void modifyRifle(){
         int index;
+        int ammo;
+        String name, origincountry;
+        double gauge;
 
         Scanner input = new Scanner(System.in);
+        Scanner input2 = new Scanner(System.in);
 
         showRifleList();
+
         System.out.println("Choose the index weapon you want to edit:");
-        try {
-            index = input.nextInt();
-        }catch (IndexOutOfBoundsException e) {
-            messageOutOfBound();
+
+        index = input2.nextInt();
+        if (index > rifles.size()){
+            System.out.println("Introduce a valid index.");
+            System.out.println("");
+            modifyRifle();
         }
-        
 
 
 
+        switch (Menu.modifyWeaponMenu()){
+            case 1:
+                System.out.println("Enter the new name of the weapon: ");
+                name = input.nextLine();
+                rifles.get(index - 1).setName(name);
+                break;
+            case 2:
+                System.out.println("Enter the new name of the origin country: ");
+                origincountry = input.nextLine();
+                rifles.get(index - 1).setOriginplace(origincountry);
+                break;
+            case 3:
+                System.out.println("Enter the new amount of ammo you can put into the weapon: ");
+                ammo = input.nextInt();
+                rifles.get(index - 1).setAmmunitionClip(ammo);
+                break;
+            case 4:
+                System.out.println("Enter the new gauge of your weapon");
+                gauge = input.nextDouble();
+                rifles.get(index - 1).setGauge(gauge);
+                break;
+        }
     }
+    public void modifyAssaultRifle(){
+        int index;
+        int ammo;
+        String name, origincountry;
+        double gauge;
 
+
+        Scanner input = new Scanner(System.in);
+        Scanner input2 = new Scanner(System.in);
+
+        showAssaultRifleList();
+
+        System.out.println("Choose the index weapon you want to edit:");
+
+        index = input2.nextInt();
+        if (index > assaultRifles.size()){
+            System.out.println("Introduce a valid index.");
+            System.out.println("");
+            modifyAssaultRifle();
+        }
+
+
+
+        switch (Menu.modifyWeaponMenu()){
+            case 1:
+                System.out.println("Enter the new name of the weapon: ");
+                name = input.nextLine();
+                assaultRifles.get(index - 1).setName(name);
+                break;
+            case 2:
+                System.out.println("Enter the new name of the origin country: ");
+                origincountry = input.nextLine();
+                assaultRifles.get(index - 1).setOriginplace(origincountry);
+                break;
+            case 3:
+                System.out.println("Enter the new amount of ammo you can put into the weapon: ");
+                ammo = input.nextInt();
+                assaultRifles.get(index - 1).setAmmunitionClip(ammo);
+                break;
+            case 4:
+                System.out.println("Enter the new gauge of your weapon");
+                gauge = input.nextDouble();
+                assaultRifles.get(index - 1).setGauge(gauge);
+                break;
+        }
+    }
+    public void modifySubMachineGun(){
+        int index;
+        int ammo;
+        String name, origincountry;
+        double gauge;
+
+        Scanner input = new Scanner(System.in);
+        Scanner input2 = new Scanner(System.in);
+
+        showSubMachineList();
+
+        System.out.println("Choose the index weapon you want to edit:");
+
+        index = input2.nextInt();
+        if (index > subMachineGuns.size()){
+            System.out.println("Introduce a valid index.");
+            System.out.println("");
+            modifySubMachineGun();
+        }
+
+
+
+        switch (Menu.modifyWeaponMenu()){
+            case 1:
+                System.out.println("Enter the new name of the weapon: ");
+                name = input.nextLine();
+                subMachineGuns.get(index - 1).setName(name);
+                break;
+            case 2:
+                System.out.println("Enter the new name of the origin country: ");
+                origincountry = input.nextLine();
+                subMachineGuns.get(index - 1).setOriginplace(origincountry);
+                break;
+            case 3:
+                System.out.println("Enter the new amount of ammo you can put into the weapon: ");
+                ammo = input.nextInt();
+                subMachineGuns.get(index - 1).setAmmunitionClip(ammo);
+                break;
+            case 4:
+                System.out.println("Enter the new gauge of your weapon");
+                gauge = input.nextDouble();
+                subMachineGuns.get(index - 1).setGauge(gauge);
+                break;
+        }
+    }
+    public void modifySniperRifle(){
+        int index;
+        int ammo;
+        String name, origincountry;
+        double gauge;
+
+        Scanner input = new Scanner(System.in);
+        Scanner input2 = new Scanner(System.in);
+
+        showSniperRifleList();
+
+        System.out.println("Choose the index weapon you want to edit:");
+
+        index = input2.nextInt();
+        if (index > sniperRifles.size()){
+            System.out.println("Introduce a valid index.");
+            System.out.println("");
+            modifySniperRifle();
+        }
+
+
+
+        switch (Menu.modifyWeaponMenu()){
+            case 1:
+                System.out.println("Enter the new name of the weapon: ");
+                name = input.nextLine();
+                sniperRifles.get(index - 1).setName(name);
+                break;
+            case 2:
+                System.out.println("Enter the new name of the origin country: ");
+                origincountry = input.nextLine();
+                sniperRifles.get(index - 1).setOriginplace(origincountry);
+                break;
+            case 3:
+                System.out.println("Enter the new amount of ammo you can put into the weapon: ");
+                ammo = input.nextInt();
+                sniperRifles.get(index - 1).setAmmunitionClip(ammo);
+                break;
+            case 4:
+                System.out.println("Enter the new gauge of your weapon");
+                gauge = input.nextDouble();
+                sniperRifles.get(index - 1).setGauge(gauge);
+                break;
+        }
+    }
 
     //    Methods to ordinate the weapon calibers by weapon type
 

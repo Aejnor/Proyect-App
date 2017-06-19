@@ -18,21 +18,6 @@ public class Menu {
 
     }
 
-//    public void fillArrays() {
-//
-//        app.addAssaultRifle(new Gun("AK47", "URSS", 30, 7.62));
-//
-//        app.addRifle(new Gun("Springfield M1903", "United States of America", 5, 5.56));
-//
-//        app.addSniperRifle(new Gun("M24A3", "United States of America", 5, 8.6));
-//
-//        app.addSubMachineGuns(new Gun("MP40", "Nazi Germany", 32, 0.9));
-//
-//        initialMenu();
-//
-//    }
-
-
 
 //     I call here the first menu, where they can choose "add", "delete" or "show"
 
@@ -84,6 +69,8 @@ public class Menu {
         int option = 0;
 
         System.out.println("*********************************");
+        System.out.println("*      Choose one option        *");
+        System.out.println("*                               *");
         System.out.println("*      1 - Add weapon           *");
         System.out.println("*      2 - Delete weapon        *");
         System.out.println("*      3 - Show weapons         *");
@@ -120,6 +107,8 @@ public class Menu {
         int option = 0;
 
         System.out.println("***********************************************");
+        System.out.println("*              What kind of weapon?           *");
+        System.out.println("*                                             *");
         System.out.println("*              1 - Assault Rifles             *");
         System.out.println("*              2 - Rifles                     *");
         System.out.println("*              3 - Sub-Machine guns           *");
@@ -150,6 +139,8 @@ public class Menu {
         int option = 0;
 
         System.out.println("***********************************************");
+        System.out.println("*         What do you want to change?         *");
+        System.out.println("*                                             *");
         System.out.println("*              1 - Name                       *");
         System.out.println("*              2 - Origin Country             *");
         System.out.println("*              3 - Ammo in the clip           *");
@@ -279,6 +270,7 @@ public class Menu {
 
     }
 
+
     public static void modifyWeapon() {
         int option;
 
@@ -287,16 +279,16 @@ public class Menu {
             switch (option) {
 
                 case 1:
-              //      app.modifyAssaultRifle();
+                    app.modifyAssaultRifle();
                     break;
                 case 2:
                     app.modifyRifle();
                     break;
                 case 3:
-          //          app.modifySubMachine();
+                    app.modifySubMachineGun();
                     break;
                 case 4:
-            //        app.modifySniperRifle();
+                    app.modifySniperRifle();
                     break;
             }
         }

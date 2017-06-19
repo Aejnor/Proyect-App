@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 /**
  * Created by Adolfo on 03/06/2017.
  */
-public  class Gun implements Serializable{
+public class Gun implements Serializable{
 
     private static final long serialVersionUID = 1629957935387057901L;
 
