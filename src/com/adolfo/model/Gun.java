@@ -1,12 +1,15 @@
 package com.adolfo.model;
 
+import java.io.Serializable;
 import java.util.Comparator;
 import java.util.regex.Pattern;
 
 /**
  * Created by Adolfo on 03/06/2017.
  */
-public class Gun {
+public  class Gun implements Serializable{
+
+    private static final long serialVersionUID = 1629957935387057901L;
 
     String name;
     String originplace;
@@ -31,33 +34,33 @@ public class Gun {
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
-        this.name = name;
+            this.name = name;
     }
 
     public String getOriginplace() {
         return originplace;
     }
-
     public void setOriginplace(String originplace) {
-        this.originplace = originplace;
+            this.originplace = originplace;
     }
 
     public int getAmmunitionClip() {
         return ammunitionClip;
     }
-
     public void setAmmunitionClip(int ammunitionClip) {
-        this.ammunitionClip = ammunitionClip;
+        if (ammunitionClip > 0) {
+            this.ammunitionClip = ammunitionClip;
+        }
     }
 
     public double getGauge() {
         return gauge;
     }
-
     public void setGauge(double gauge) {
-        this.gauge = gauge;
+        if(gauge > 0.0){
+            this.gauge = gauge;
+        }
     }
 
 
@@ -70,8 +73,9 @@ public class Gun {
     }
 
 
-//  Trying to compare weapons by caliber
+//  Comparator methods, we use them in the AppController methods to order the weapons.
 
+    // We compare the weapons by their gauge
     public static Comparator<Gun> comparingbygauge = new Comparator<Gun>() {
         @Override
         public int compare(Gun a1, Gun a2) {
@@ -79,6 +83,7 @@ public class Gun {
         }
     };
 
+    // We compare the weapons by their names
     public static Comparator<Gun> comparingByName = new Comparator<Gun>() {
         @Override
         public int compare(Gun a1, Gun a2) {
@@ -86,6 +91,7 @@ public class Gun {
         }
     };
 
+    // We compare the weapons by the name of the country
     public static Comparator<Gun> comparingByCountry = new Comparator<Gun>() {
         @Override
         public int compare(Gun a1, Gun a2) {
@@ -93,6 +99,7 @@ public class Gun {
         }
     };
 
+    // We compare the weapons by the ammo they can keep in the charger.
     public static Comparator<Gun> comparingByAmmoclip = new Comparator<Gun>() {
         @Override
         public int compare(Gun a1, Gun a2) {

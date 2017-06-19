@@ -48,6 +48,13 @@ ________________________________________ DOCUMENTATION OF THE APP ______________
 - Two helpers methods to use them when we want to launch some message about any type of exception that launches the program.
 
 
+
+
+____________________________________________ How to use it ________________________________________________
+
+
+
+
 _____________________________________ What i want to add in a future ______________________________________
 
 

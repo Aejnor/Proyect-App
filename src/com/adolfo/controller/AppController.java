@@ -2,16 +2,19 @@ package com.adolfo.controller;
 
 import com.adolfo.model.*;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+
 
 /**
  * Created by Adolfo on 03/06/2017.
  */
 
 public class AppController {
+
 
 
 //    The declaration of the arrays depending on the type of weapons
@@ -24,12 +27,17 @@ public class AppController {
 
     // Initialization constructors
 
+
+
     public AppController() {
         rifles = new ArrayList<>();
         assaultRifles = new ArrayList<>();
         subMachineGuns = new ArrayList<>();
         sniperRifles = new ArrayList<>();
     }
+
+
+
 
 //    Getters
 
@@ -283,6 +291,28 @@ public class AppController {
         }
     }
 
+
+    // Methods to modify the kind of weapon
+
+    public void modifyRifle(){
+        int index;
+
+        Scanner input = new Scanner(System.in);
+
+        showRifleList();
+        System.out.println("Choose the index weapon you want to edit:");
+        try {
+            index = input.nextInt();
+        }catch (IndexOutOfBoundsException e) {
+            messageOutOfBound();
+        }
+        
+
+
+
+    }
+
+
     //    Methods to ordinate the weapon calibers by weapon type
 
     public void ordinationRiflesByGauge() {
@@ -465,10 +495,90 @@ public class AppController {
     }
 
 
+    // Save all the weapons
 
+    public void saveWeapons(){
+        try {
+            ObjectOutputStream assaultRifles = new ObjectOutputStream( new FileOutputStream("data/assaultRifles.dat"));
+            assaultRifles.writeObject( this.assaultRifles );
+            assaultRifles.close();
 
+            ObjectOutputStream rifles = new ObjectOutputStream( new FileOutputStream("data/rifles.dat"));
+            rifles.writeObject( this.rifles );
+            rifles.close();
 
+            ObjectOutputStream subMachineGun = new ObjectOutputStream( new FileOutputStream("data/subMachine.dat"));
+            subMachineGun.writeObject( this.subMachineGuns );
+            subMachineGun.close();
 
+            ObjectOutputStream sniperRifles = new ObjectOutputStream( new FileOutputStream("data/sniperRifles.dat"));
+            sniperRifles.writeObject( this.sniperRifles );
+            sniperRifles.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Load everything
+    public void loadGuns(){
+        loadAssaultRifles();
+        loadRifles();
+        loadSniperRifles();
+        loadSubMachine();
+    }
+
+    // Load the Rifles list
+    public void loadRifles() {
+        try {
+            ObjectInputStream rifles = new ObjectInputStream(new FileInputStream("data/rifles.dat"));
+            this.rifles = (ArrayList<Gun>)rifles.readObject();
+            rifles.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Load the Sniper Rifles list
+    public void loadSniperRifles() {
+        try {
+            ObjectInputStream sniperRifles = new ObjectInputStream(new FileInputStream("data/sniperrifles.dat"));
+            this.sniperRifles = (ArrayList<Gun>)sniperRifles.readObject();
+            sniperRifles.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Load the Assault Rifles list
+    public void loadAssaultRifles() {
+        try {
+            ObjectInputStream assaultRifles = new ObjectInputStream(new FileInputStream("data/assaultRifles.dat"));
+            this.assaultRifles = (ArrayList<Gun>)assaultRifles.readObject();
+            assaultRifles.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Load the Sub-Machine Guns list
+    public void loadSubMachine() {
+        try {
+            ObjectInputStream subMachineGun = new ObjectInputStream(new FileInputStream("data/subMachine.dat"));
+            this.subMachineGuns = (ArrayList<Gun>)subMachineGun.readObject();
+            subMachineGun.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 
 
 

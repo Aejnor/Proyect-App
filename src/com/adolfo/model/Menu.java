@@ -14,29 +14,33 @@ public class Menu {
     public Menu() {
 
         app = new AppController();
+        app.loadGuns();
 
     }
 
-    public void fillArrays() {
+//    public void fillArrays() {
+//
+//        app.addAssaultRifle(new Gun("AK47", "URSS", 30, 7.62));
+//
+//        app.addRifle(new Gun("Springfield M1903", "United States of America", 5, 5.56));
+//
+//        app.addSniperRifle(new Gun("M24A3", "United States of America", 5, 8.6));
+//
+//        app.addSubMachineGuns(new Gun("MP40", "Nazi Germany", 32, 0.9));
+//
+//        initialMenu();
+//
+//    }
 
-        app.addAssaultRifle(new Gun("Assault Rifle Test", "United States Of America", 2, 7.62));
 
-        app.addRifle(new Gun("Rifle Test", "Spain", 20, 5.56));
-
-        app.addSniperRifle(new Gun("Sniper Rifle Test", "Israel", 5, 302));
-
-        app.addSubMachineGuns(new Gun("SubMachine test", "China", 40, 4.23));
-
-        menuInicial();
-
-    }
 
 //     I call here the first menu, where they can choose "add", "delete" or "show"
 
 
-    public static void menuInicial() {
+    public static void initialMenu() {
 
         int option;
+
 
         while ((option = showInitialMenu()) != 0) {
 
@@ -52,7 +56,7 @@ public class Menu {
                     showWeapon();
                     break;
                 case 4:
-//                    modifyWeapon();
+                    modifyWeapon();
                     break;
                 case 5:
                     ordinateWeaponByGauge();
@@ -67,7 +71,7 @@ public class Menu {
                     alphabeticOrdinationByCountry();
             }
         }
-
+        app.saveWeapons();
     }
 
 
@@ -84,10 +88,10 @@ public class Menu {
         System.out.println("*      2 - Delete weapon        *");
         System.out.println("*      3 - Show weapons         *");
         System.out.println("*      4 - Modify weapon        *");
-        System.out.println("*      5 - Compare by gauge     *");
-        System.out.println("*      6 - Compare by name      *");
-        System.out.println("*      7 - Compare by magazine  *");
-        System.out.println("*      8 - Compare by country   *");
+        System.out.println("*      5 - Sort by gauge        *");
+        System.out.println("*      6 - Sort by name         *");
+        System.out.println("*      7 - Sort by magazine     *");
+        System.out.println("*      8 - Sort by country      *");
         System.out.println("*      0 - Exit                 *");
         System.out.println("*********************************");
         System.out.println("Option: ");
@@ -97,12 +101,12 @@ public class Menu {
             input.nextLine();
             if (option < 0) {
                 System.out.println("Choose a valid value, please.");
-            } else if (option > 7) {
+            } else if (option > 8) {
                 System.out.println("Choose a valid value, please.");
             }
         } catch (InputMismatchException e) {
             System.out.println("Invalid value, choose one that is in the list");
-            menuInicial();
+            initialMenu();
         }
         return option;
 
@@ -113,7 +117,7 @@ public class Menu {
     public static int selectWeapons() {
         Scanner input = new Scanner(System.in);
 
-        int option = 1;
+        int option = 0;
 
         System.out.println("***********************************************");
         System.out.println("*              1 - Assault Rifles             *");
@@ -138,6 +142,38 @@ public class Menu {
     }
 
 
+    // Menu to choose what you want to edit from the weapon
+
+    public static int modifyWeaponMenu(){
+        Scanner input = new Scanner(System.in);
+
+        int option = 0;
+
+        System.out.println("***********************************************");
+        System.out.println("*              1 - Name                       *");
+        System.out.println("*              2 - Origin Country             *");
+        System.out.println("*              3 - Ammo in the clip           *");
+        System.out.println("*              4 - Gauge                      *");
+        System.out.println("*              0 - Go back                    *");
+        System.out.println("***********************************************");
+
+        try {
+            System.out.println("Option: ");
+            option = input.nextInt();
+            input.nextLine();
+            if (option < 0) {
+                System.out.println("Choose a valid option, please.");
+            } else if (option > 4) {
+                System.out.println("Choose a valid option, please.");
+            }
+        } catch (InputMismatchException e) {
+            System.out.println("Invalid value, we return you to the main menu.");
+        }
+
+        return option;
+    }
+
+
 //    With these two methods we know in what category we are gonna add the weapon you want
 
     private static int menuAddWeapon() {
@@ -147,6 +183,7 @@ public class Menu {
         return option;
 
     }
+
     public static void addWeapon() {
 
         int option;
@@ -154,7 +191,6 @@ public class Menu {
         while ((option = menuAddWeapon()) != 0) {
 
             switch (option) {
-
                 case 1:
                     app.addAssaultRifle();
                     break;
@@ -167,11 +203,8 @@ public class Menu {
                 case 4:
                     app.addSniperRifle();
                     break;
-
             }
-
         }
-
     }
 
 //    With these two methods we know what category weapons we are gonna show
@@ -182,6 +215,7 @@ public class Menu {
         return option;
 
     }
+
     public static void showWeapon() {
 
         int option;
@@ -211,6 +245,7 @@ public class Menu {
         option = selectWeapons();
         return option;
     }
+
     public static void deleteWeapon() {
 
         int option;
@@ -243,8 +278,28 @@ public class Menu {
         return option;
 
     }
-    public static void modifyweapon() {
 
+    public static void modifyWeapon() {
+        int option;
+
+        while ((option = menuModifyWeapon()) != 0) {
+
+            switch (option) {
+
+                case 1:
+              //      app.modifyAssaultRifle();
+                    break;
+                case 2:
+                    app.modifyRifle();
+                    break;
+                case 3:
+          //          app.modifySubMachine();
+                    break;
+                case 4:
+            //        app.modifySniperRifle();
+                    break;
+            }
+        }
     }
 
 //  With these methods we know what category weapons we have to show ordered by the gauge
@@ -255,6 +310,7 @@ public class Menu {
         return option;
 
     }
+
     public static void ordinateWeaponByGauge() {
 
         int option;
@@ -286,6 +342,7 @@ public class Menu {
         option = selectWeapons();
         return option;
     }
+
     public static void alphabeticOrdination() {
 
         int option;
@@ -317,6 +374,7 @@ public class Menu {
         option = selectWeapons();
         return option;
     }
+
     public static void alphabeticOrdinationByCountry() {
 
         int option;
@@ -348,6 +406,7 @@ public class Menu {
         option = selectWeapons();
         return option;
     }
+
     public static void ordinationByAmmoInMagazine() {
 
         int option;
@@ -372,7 +431,6 @@ public class Menu {
         }
     }
 
-    
 
 }
 
